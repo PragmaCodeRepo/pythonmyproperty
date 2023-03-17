@@ -6,27 +6,27 @@ SECRET_KEY = '#g(5zv-!kie@0l%&*8ubyv0h(%#l2vie*4=804x0kdi3$4!u)m'
 ALLOWED_HOSTS = ['*']  # List of strings of allowed hosts
 #'3.25.115.118','*'
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "my_property_solutions",
-        "HOST": "localhost",
-        "USER" : "postgres",
-        "PORT": 5432,
-        "PASSWORD": "pass@123"
-    }
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql_psycopg2",
+#         "NAME": "my_property_solutions",
+#         "HOST": "localhost",
+#         "USER" : "postgres",
+#         "PORT": 5432,
+#         "PASSWORD": "pass@123"
+#     }
+# }
 
 from pathlib import Path
 
-# BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
